@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Listings</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>All Listings</h1>
+    <form method="post" action="/listings">
+
+        <input type="text" name="search" placeholder="search listings">
+        <button>Search</button>
+    </form>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3" id="item">
+        <% for(listing of listing) { %>
+            <div class="card col listing-card">
+                <img src="<%=listing.image%>" class="card-img-top" alt="Listing_img" style="height:20rem" />
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <b id="title">
+                            <%= listing.title%>
+                        </b>
+                    </p>
+                    </p>
+                </div>
+            </div>
+            <%} %>
+    </div>
+</body>
+
+</html>
