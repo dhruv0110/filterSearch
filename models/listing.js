@@ -7,6 +7,7 @@ const listingSchema = new mongoose.Schema({
     },
     description : {
         type : String,
+        maxLength : 150,
     },
     image : {
         type : String,
